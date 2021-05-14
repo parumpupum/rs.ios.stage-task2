@@ -3,7 +3,7 @@
 @implementation TwoDimensionalArraySorter
 
 - (NSArray *)twoDimensionalSort:(NSArray<NSArray *> *)array {
-    if (array == nil)return @[];
+    if (array == nil || array.count == 0)return @[];
     
     NSMutableArray *stringArray = [[NSMutableArray alloc] init];
     NSMutableArray *intArray = [[NSMutableArray alloc] init];
@@ -31,4 +31,3 @@
 }
 
 @end
-
