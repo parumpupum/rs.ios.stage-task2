@@ -27,7 +27,11 @@
     
     if (intArray.count == 0)return stringArray;
     else if (stringArray.count == 0)return intArray;
-    else return [NSArray arrayWithObjects:intArray, stringArray, nil];
+    else{
+        [stringArray sortUsingDescriptors:
+             [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO selector:@selector(localizedCaseInsensitiveCompare:)]]];
+        return [NSArray arrayWithObjects:intArray, stringArray, nil];
+    }
 }
 
 @end
